@@ -1,6 +1,6 @@
 var index = 0;
 
-var picList = ["/contents/introscreen.png", "/contents/content/1.png", "/contents/content/2.png", "/contents/content/3.png", "/contents/content/4.png", "/contents/content/5.png", "/contents/content/6.png", "/contents/content/7.png", "/contents/content/8.png"];
+var picList = ["imagess/introscreen.png", "images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png", "images/7.png", "images/8.png"];
 
 $(function () {
 
