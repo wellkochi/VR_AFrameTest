@@ -1,5 +1,7 @@
 <html>
 
+<meta name="apple-mobile-web-app-capable" content="yes" />
+
 <head>
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -15,6 +17,9 @@
             <img id="yesButton" src="images/yes.png">
             <img id="noButton" src="images/no.png">
             <audio id="bgm" src="images/bgm.mp3" preload="auto"></audio>
+            <audio id="begin" src="images/decide.mp3" preload="auto"></audio>
+            <audio id="click" src="images/click.wav" preload="auto"></audio>
+            <video id="count" src="images/countdown.mp4"></video>
         </a-assets>
 
         <a-camera look-controls wasd-controls-enabled="false">
@@ -23,12 +28,20 @@
             </a-entity>
         </a-camera>
 
-        <a-sky color="#000000" sound="src: #bgm; autoplay: true"></a-sky>
-        <a-image id="screen" position="0 1.6 -0.6" scale="1.8 1 1"></a-image>
-        <a-image id="start" src="#startButton" position="0 1.35 -0.4" scale="0.1 0.04"></a-image>
-        <a-image id="play" src="#playButton" position="0 1.35 -0.4" scale="0.04 0.04" visible="false"></a-image>
-        <a-image id="yes" src="#yesButton" position="-0.11 1.45 -0.4" scale="0.1 0.04" visible="false"></a-image>
-        <a-image id="no" src="#noButton" position="0.11 1.45 -0.4" scale="0.1 0.04" visible="false"></a-image>
+        <a-sky color="#000000" sound="src: #bgm"></a-sky>
+
+        <a-plane id="screen" src="#count" position="0 1.6 -0.6" scale="1.8 1 1">
+        </a-plane>
+
+        <a-image id="start" src="#startButton" position="0 1.5 -0.35" scale="0.1 0.04" visible="false" sound="src: #begin; on: click">
+            <a-animation attribute="visible" begin="5300" to="true"></a-animation>
+        </a-image>
+
+        <a-image id="play" src="#playButton" position="0 1.35 -0.35" scale="0.04 0.04" visible="false" sound="src: #click; on: click"></a-image>
+
+        <a-image id="yes" src="#yesButton" position="-0.11 1.45 -0.35" scale="0.1 0.04" visible="false" sound="src: #begin; on: click"></a-image>
+
+        <a-image id="no" src="#noButton" position="0.11 1.45 -0.35" scale="0.1 0.04" visible="false" sound="src: #begin; on: click"></a-image>
 
     </a-scene>
 </body>

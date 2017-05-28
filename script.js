@@ -1,11 +1,8 @@
 var index = 0;
 
-var picList = ["images/intro.png", "images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png", "images/7.png", "images/8.png"];
+var picList = ["images/intro.png", "images/1.png", "images/2.png", "images/3.png", "images/4.png", "images/5.png", "images/6.png", "images/7.png", "images/8.png", "images/plan.mp4"];
 
 $(function () {
-
-    document.getElementById("screen").setAttribute("src", picList[index]);
-
 
     $("#start").on("fusing", function () {
         document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
@@ -15,6 +12,7 @@ $(function () {
         document.getElementById("start").setAttribute("visible", "false");
         document.getElementById("play").setAttribute("visible", "true");
         document.getElementById("screen").setAttribute("src", picList[index++]);
+        document.querySelector('[sound]').components.sound.playSound();
     })
 
     $("#play").on("fusing", function () {
@@ -37,7 +35,10 @@ $(function () {
     })
 
     $("#yes").on("click", function () {
-        window.open("https://www.linkedin.com/in/gaoqiz");
+        document.getElementById("screen").setAttribute("src", picList[9]);
+        document.querySelector('[sound]').components.sound.stopSound();
+        document.getElementById("yes").setAttribute("visible", "false");
+        document.getElementById("no").setAttribute("visible", "false");
     })
 
     $("#no").on("fusing", function () {
@@ -45,6 +46,7 @@ $(function () {
     })
 
     $("#no").on("click", function () {
+        window.open("https://www.linkedin.com/in/gaoqiz");
         location.reload();
     })
 
