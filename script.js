@@ -47,7 +47,7 @@ $(function () {
 
     $("#no").on("click", function () {
         window.open("https://www.linkedin.com/in/gaoqiz");
-        location.reload();
+        window.location.reload(false); 
     })
 
 })
