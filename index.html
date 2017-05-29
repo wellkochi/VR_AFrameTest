@@ -14,6 +14,7 @@
         <a-assets>
             <img id="startButton" src="images/start.png">
             <img id="playButton" src="images/play.png">
+            <img id="unfreezeButton" src="images/unfreeze.png">
             <img id="yesButton" src="images/yes.png">
             <img id="noButton" src="images/no.png">
             <audio id="bgm" src="images/bgm.mp3" preload="auto"></audio>
@@ -23,14 +24,14 @@
         </a-assets>
 
         <a-camera look-controls wasd-controls-enabled="false">
-            <a-entity id="cursor" cursor="fuse: true; fuseTimeout: 1000" position="0 0 -0.1" geometry="primitive: ring; radiusInner: 0.0012; radiusOuter: 0.002" material="color: black; shader: flat">
+            <a-entity id="cursor" cursor="fuse: false; fuseTimeout: 1000" position="0 0 -0.1" geometry="primitive: ring; radiusInner: 0.0012; radiusOuter: 0.002" material="color: black; shader: flat">
                 <a-animation begin="Fuse" easing="ease-in" dur="1000" attribute="scale" fill="none" to="0.1 0.1 0.1"></a-animation>
             </a-entity>
         </a-camera>
 
         <a-sky color="#000000" sound="src: #bgm"></a-sky>
 
-        <a-plane id="screen" src="#count" position="0 1.6 -0.6" scale="1.8 1 1">
+        <a-plane id="screen" src="#count" position="0 1.6 -0.6" scale="1.8 1">
         </a-plane>
 
         <a-image id="start" src="#startButton" position="0 1.5 -0.35" scale="0.1 0.04" visible="false" sound="src: #begin; on: click">
@@ -38,6 +39,10 @@
         </a-image>
 
         <a-image id="play" src="#playButton" position="0 1.35 -0.35" scale="0.04 0.04" visible="false" sound="src: #click; on: click"></a-image>
+
+<!--        <a-image id="unfreeze" src="#unfreezeButton" position="0 1.45 -0.35" scale="0.1 0.04" visible="false" sound="src: #begin; on: click"></a-image>-->
+
+        <a-entity id="move" position="0 1.45 -0.35" text="color: red; align: center; value: Use WASD to Move" scale="0.4 0.4" visible="false"></a-entity>
 
         <a-image id="yes" src="#yesButton" position="-0.11 1.51 -0.35" scale="0.1 0.04" visible="false" sound="src: #begin; on: click"></a-image>
 
