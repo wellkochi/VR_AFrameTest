@@ -12,7 +12,7 @@ $(function () {
         document.getElementById("start").setAttribute("visible", "false");
         document.getElementById("play").setAttribute("visible", "true");
         document.getElementById("unfreeze").setAttribute("visible", "true");
-        document.getElementById("screen").setAttribute("src", picList[index++]);
+        document.getElementById("screen").setAttribute("src", picList[1]);
         document.querySelector('[sound]').components.sound.playSound();
     })
     
