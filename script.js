@@ -11,20 +11,10 @@ $(function () {
     $("#start").on("click", function () {
         document.getElementById("start").setAttribute("visible", "false");
         document.getElementById("play").setAttribute("visible", "true");
-        document.getElementById("unfreeze").setAttribute("visible", "true");
-        document.getElementById("screen").setAttribute("src", picList[1]);
+        document.getElementById("screen").setAttribute("src", picList[index++]);
         document.querySelector('[sound]').components.sound.playSound();
     })
     
-//    $("#unfreeze").on("fusing", function () {
-//        document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
-//    })
-//
-//    $("#unfreeze").on("click", function () {
-//        document.getElementById("unfreeze").setAttribute("visible", "false");
-//        document.getElementById("move").setAttribute("visible", "true");
-//        document.querySelector('a-scene').querySelector('a-camera').setAttribute("wasd-controls-enabled", "true");
-//    })
 
     $("#play").on("fusing", function () {
         document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
