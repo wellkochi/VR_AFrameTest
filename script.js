@@ -4,10 +4,6 @@ var picList = ["images/intro.png", "images/1.png", "images/2.png", "images/3.png
 
 $(function () {
 
-    $("#start").on("fusing", function () {
-        document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
-    })
-
     $("#start").on("click", function () {
         document.getElementById("start").setAttribute("visible", "false");
         document.getElementById("play").setAttribute("visible", "true");
@@ -15,11 +11,6 @@ $(function () {
         document.querySelector('[sound]').components.sound.playSound();
     })
     
-
-    $("#play").on("fusing", function () {
-        document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
-    })
-
     $("#play").on("click", function () {
         document.getElementById("screen").setAttribute("src", picList[index++]);
         console.log(index);
@@ -31,19 +22,11 @@ $(function () {
         }
     })
 
-    $("#yes").on("fusing", function () {
-        document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
-    })
-
     $("#yes").on("click", function () {
         document.getElementById("screen").setAttribute("src", picList[9]);
         document.querySelector('[sound]').components.sound.stopSound();
         document.getElementById("yes").setAttribute("visible", "false");
         document.getElementById("no").setAttribute("visible", "false");
-    })
-
-    $("#no").on("fusing", function () {
-        document.querySelector('a-scene').querySelector('#cursor').emit("Fuse");
     })
 
     $("#no").on("click", function () {
